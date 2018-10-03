@@ -6,9 +6,11 @@ const apiKey = 'AIzaSyDGvqIUhorsoAEvjHiF4lGy_MNXIbS9C6A';
 class Map extends Component {
     render() {
         return (
-            <h1>My Google Map</h1>
-  <div id="map"></div>
-        );
+            <section aria-labelledby="map-aria-description" role="application">
+            <div id="map" ></div>
+            <label id="map-aria-description" class="map-aria-description">Google Maps Application</label>
+            </section>
+        )
     }
 }
 

@@ -3,6 +3,10 @@
   width: 100%;
 }
 
+.map-aria-description {
+  display: none;
+}
+
 .App {
   text-align: center;
 }
