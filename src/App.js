@@ -21,6 +21,8 @@ class App extends Component {
   }
 }
 
+const apiKey = 'AIzaSyDGvqIUhorsoAEvjHiF4lGy_MNXIbS9C6A';
+let url = `https://maps.googleapis.com/maps/api/js?key=${apiKey}&callback=initMap`
 
 function scriptLoad(url) {
   let index = window.document.getElementsByTagName("script")[0];

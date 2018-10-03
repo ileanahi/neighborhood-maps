@@ -1,7 +1,6 @@
 import React from 'react'
 import {GoogleApiWrapper} from 'google-maps-react';
 
-const apiKey = 'AIzaSyDGvqIUhorsoAEvjHiF4lGy_MNXIbS9C6A';
 
 class Map extends Component {
     render() {
