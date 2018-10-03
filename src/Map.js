@@ -14,11 +14,6 @@ class Map extends Component {
     }
 }
 
-function initMap() {
-    let options = {
-      zoom: 8,
-      center: { lat: 19.6400, lng: 155.9969 }
-    }
 
     let map = new google.maps.Map(document.getElementById('map'), options);
   }

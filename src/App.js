@@ -3,6 +3,14 @@ import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
+
+  function initMap() {
+    let options = {
+      zoom: 8,
+      center: { lat: 19.6400, lng: 155.9969 }
+    }
+
+
   render() {
     return (
       <main>
