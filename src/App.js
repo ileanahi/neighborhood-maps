@@ -5,11 +5,12 @@ import './App.css';
 class App extends Component {
 
   initMap = () => {
+    const map = new google.maps.Map(document.getElementById('map'), options);
     let options = {
       zoom: 8,
       center: { lat: 19.6400, lng: 155.9969 }
     }
-
+  }
 
   render() {
     return (
@@ -18,6 +19,16 @@ class App extends Component {
       </main>
     )
   }
+}
+
+
+function scriptLoad(url) {
+  let index = window.document.getElementsByTagName("script")[0];
+  let script = window.document.createElement("script");
+  script.src = url;
+  script.async = true;
+  script.defer = true;
+  index.parentNode.insertBefore(script, index);
 }
 
 export default App;

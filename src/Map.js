@@ -15,7 +15,4 @@ class Map extends Component {
 }
 
 
-    let map = new google.maps.Map(document.getElementById('map'), options);
-  }
-
 export default Map;
