@@ -4,7 +4,7 @@ import './App.css';
 
 class App extends Component {
 
-  function initMap() {
+  initMap = () => {
     let options = {
       zoom: 8,
       center: { lat: 19.6400, lng: 155.9969 }
