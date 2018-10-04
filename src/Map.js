@@ -1,5 +1,4 @@
-import React from 'react'
-import {GoogleApiWrapper} from 'google-maps-react';
+import React, { Component } from 'react';
 
 
 class Map extends Component {
@@ -7,7 +6,7 @@ class Map extends Component {
         return (
             <section aria-labelledby="map-aria-description" role="application">
             <div id="map" ></div>
-            <label id="map-aria-description" class="map-aria-description">Google Maps Application</label>
+            <label id="map-aria-description" className="map-aria-description">Google Maps Application</label>
             </section>
         )
     }

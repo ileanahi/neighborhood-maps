@@ -1,25 +1,30 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Map from './Map';
 
 class App extends Component {
 
+componentDidMount() {
+  this.loadMap();
+}
+
+  initMap = () => {
+    let options = {
+      zoom: 8,
+      center: { lat: 19.6400, lng: 155.9969 }
+    }
+    const map = new window.google.maps.Map(document.getElementById('map'), options);
+}
 
   loadMap = () => {
     const apiKey = 'AIzaSyDGvqIUhorsoAEvjHiF4lGy_MNXIbS9C6A';
     let url = `https://maps.googleapis.com/maps/api/js?key=${apiKey}&callback=initMap`;
 
     scriptLoader(url);
-
+    // So window can access initMap function
+    window.initMap = this.initMap;
   }
 
-  initMap = () => {
-    const map = new window.google.maps.Map(document.getElementById('map'), options);
-    let options = {
-      zoom: 8,
-      center: { lat: 19.6400, lng: 155.9969 }
-    }
-  }
 
   render() {
     return (
