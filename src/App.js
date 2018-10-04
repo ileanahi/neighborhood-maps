@@ -4,8 +4,17 @@ import './App.css';
 
 class App extends Component {
 
+
+  loadMap = () => {
+    const apiKey = 'AIzaSyDGvqIUhorsoAEvjHiF4lGy_MNXIbS9C6A';
+    let url = `https://maps.googleapis.com/maps/api/js?key=${apiKey}&callback=initMap`;
+
+    scriptLoader(url);
+
+  }
+
   initMap = () => {
-    const map = new google.maps.Map(document.getElementById('map'), options);
+    const map = new window.google.maps.Map(document.getElementById('map'), options);
     let options = {
       zoom: 8,
       center: { lat: 19.6400, lng: 155.9969 }
@@ -21,16 +30,15 @@ class App extends Component {
   }
 }
 
-const apiKey = 'AIzaSyDGvqIUhorsoAEvjHiF4lGy_MNXIbS9C6A';
-let url = `https://maps.googleapis.com/maps/api/js?key=${apiKey}&callback=initMap`
 
-function scriptLoad(url) {
+function scriptLoader(url) {
   let index = window.document.getElementsByTagName("script")[0];
   let script = window.document.createElement("script");
   script.src = url;
   script.async = true;
   script.defer = true;
   index.parentNode.insertBefore(script, index);
+
 }
 
 export default App;
