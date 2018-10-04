@@ -17,12 +17,15 @@ componentDidMount() {
 }
 
   loadMap = () => {
+    // So window can access initMap function
+    window.initMap = this.initMap;
+
     const apiKey = 'AIzaSyDGvqIUhorsoAEvjHiF4lGy_MNXIbS9C6A';
     let url = `https://maps.googleapis.com/maps/api/js?key=${apiKey}&callback=initMap`;
 
     scriptLoader(url);
-    // So window can access initMap function
-    window.initMap = this.initMap;
+
+
   }
 
 
