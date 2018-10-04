@@ -17,8 +17,13 @@ componentDidMount() {
       center: { lat: 19.64, lng: -155.9969 }
     }
 
+    let markerPosition = {
+        lat: 19.6387942,
+        lng: -155.9929063
+      }
+
     const map = new window.google.maps.Map(document.getElementById('map'), options);
-    //let marker = new window.google.maps.Marker({, map});
+    let marker = new window.google.maps.Marker({position: markerPosition, map});
   }
 
   // Load map and attach initMap to window
