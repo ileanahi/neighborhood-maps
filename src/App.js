@@ -2,20 +2,26 @@ import React, { Component } from 'react';
 import './App.css';
 import Map from './Map';
 
+// Borrowed code from Google Maps Tutorial https://developers.google.com/maps/documentation/javascript/adding-a-google-map
+
 class App extends Component {
 
 componentDidMount() {
   this.loadMap();
 }
 
+  // Initialize map with options
   initMap = () => {
     let options = {
-      zoom: 8,
-      center: { lat: 19.6400, lng: 155.9969 }
+      zoom: 16,
+      center: { lat: 19.64, lng: -155.9969 }
     }
-    const map = new window.google.maps.Map(document.getElementById('map'), options);
-}
 
+    const map = new window.google.maps.Map(document.getElementById('map'), options);
+    //let marker = new window.google.maps.Marker({, map});
+  }
+
+  // Load map and attach initMap to window
   loadMap = () => {
     // So window can access initMap function
     window.initMap = this.initMap;
@@ -39,6 +45,7 @@ componentDidMount() {
 }
 
 
+// Make a new script tag with src and insert it before existing script tags
 function scriptLoader(url) {
   let index = window.document.getElementsByTagName("script")[0];
   let script = window.document.createElement("script");
