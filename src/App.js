@@ -46,7 +46,21 @@ class App extends Component {
 
   getVenues = () => {
     const endPoint = 'https://api.foursquare.com/v2/venues/explore';
-    const parameters = {};
+    const parameters = {
+      client_id: 'D2KNFN3USEB03QZX4XQOLHPS30PRMP3BT2ZPEC0NULIWMA4Z',
+      client_secret: 'JX531KEPYP0KWZSLVBHXYP1CFBTXDVJGJWV5E2BOXJU4BWGP',
+      query: 'food',
+      near: 'Kailua Kona'
+    };
+
+    axios
+      .get(endPoint + new URLSearchParams(parameters))
+      .then(response => {
+        console.log(response);
+      })
+      .catch(error => {
+        console.log('ERROR: ' + error);
+      });
   };
 
   render() {
