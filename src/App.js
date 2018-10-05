@@ -27,14 +27,28 @@ class App extends Component {
       options
     );
 
-    // Make markers for each venue
     this.state.venues.map(place => {
+      // Make markers for each venue
       let marker = new window.google.maps.Marker({
         position: {
           lat: place.venue.location.lat,
           lng: place.venue.location.lng
         },
         map: map
+      });
+
+      // Content of info window
+      let contentString = `<h2>${place.venue.name}</h2><br />
+      <address>${place.venue.address}</address>`;
+
+      // Create info window for markers with the content
+      let infowindow = new window.google.maps.InfoWindow({
+        content: contentString
+      });
+
+      // Attach an event listener so the info window opens when clicked
+      marker.addListener('click', () => {
+        infowindow.open(map, marker);
       });
     });
   };
@@ -64,9 +78,12 @@ class App extends Component {
     axios
       .get(endPoint + new URLSearchParams(parameters))
       .then(response => {
-        this.setState({
-          venues: response.data.response.groups[0].items
-        });
+        this.setState(
+          {
+            venues: response.data.response.groups[0].items
+          },
+          this.loadMap()
+        );
       })
       .catch(error => {
         console.log('ERROR: ' + error);
