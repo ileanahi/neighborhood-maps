@@ -7,6 +7,10 @@ import axios from 'axios';
 // Borrowed code from Google Maps Tutorial https://developers.google.com/maps/documentation/javascript/adding-a-google-map
 
 class App extends Component {
+  state = {
+    venues: []
+  };
+
   componentDidMount() {
     this.getVenues();
     this.loadMap();
