@@ -13,7 +13,6 @@ class App extends Component {
 
   componentDidMount() {
     this.getVenues();
-    this.loadMap();
   }
 
   // Initialize map with options
@@ -23,18 +22,20 @@ class App extends Component {
       center: { lat: 19.64, lng: -155.9969 }
     };
 
-    let markerPosition = {
-      lat: 19.6387942,
-      lng: -155.9929063
-    };
-
     const map = new window.google.maps.Map(
       document.getElementById('map'),
       options
     );
-    let marker = new window.google.maps.Marker({
-      position: markerPosition,
-      map
+
+    // Make markers for each venue
+    this.state.venues.map(place => {
+      let marker = new window.google.maps.Marker({
+        position: {
+          lat: place.venue.location.lat,
+          lng: place.venue.location.lng
+        },
+        map: map
+      });
     });
   };
 
