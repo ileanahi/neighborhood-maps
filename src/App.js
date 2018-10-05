@@ -2,29 +2,36 @@ import React, { Component } from 'react';
 import './App.css';
 import Map from './Map';
 
+import axios from 'axios';
+
 // Borrowed code from Google Maps Tutorial https://developers.google.com/maps/documentation/javascript/adding-a-google-map
 
 class App extends Component {
-
-componentDidMount() {
-  this.loadMap();
-}
+  componentDidMount() {
+    this.loadMap();
+  }
 
   // Initialize map with options
   initMap = () => {
     let options = {
       zoom: 16,
       center: { lat: 19.64, lng: -155.9969 }
-    }
+    };
 
     let markerPosition = {
-        lat: 19.6387942,
-        lng: -155.9929063
-      }
+      lat: 19.6387942,
+      lng: -155.9929063
+    };
 
-    const map = new window.google.maps.Map(document.getElementById('map'), options);
-    let marker = new window.google.maps.Marker({position: markerPosition, map});
-  }
+    const map = new window.google.maps.Map(
+      document.getElementById('map'),
+      options
+    );
+    let marker = new window.google.maps.Marker({
+      position: markerPosition,
+      map
+    });
+  };
 
   // Load map and attach initMap to window
   loadMap = () => {
@@ -35,30 +42,30 @@ componentDidMount() {
     let url = `https://maps.googleapis.com/maps/api/js?key=${apiKey}&callback=initMap`;
 
     scriptLoader(url);
+  };
 
-
-  }
-
+  getVenues = () => {
+    const endPoint = 'https://api.foursquare.com/v2/venues/explore';
+    const parameters = {};
+  };
 
   render() {
     return (
       <main>
         <Map />
       </main>
-    )
+    );
   }
 }
 
-
 // Make a new script tag with src and insert it before existing script tags
 function scriptLoader(url) {
-  let index = window.document.getElementsByTagName("script")[0];
-  let script = window.document.createElement("script");
+  let index = window.document.getElementsByTagName('script')[0];
+  let script = window.document.createElement('script');
   script.src = url;
   script.async = true;
   script.defer = true;
   index.parentNode.insertBefore(script, index);
-
 }
 
 export default App;
