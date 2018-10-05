@@ -27,7 +27,12 @@ class App extends Component {
       options
     );
 
+    // Create info window for markers
+    let infowindow = new window.google.maps.InfoWindow();
+
     this.state.venues.map(place => {
+      console.log(place);
+
       // Make markers for each venue
       let marker = new window.google.maps.Marker({
         position: {
@@ -38,16 +43,15 @@ class App extends Component {
       });
 
       // Content of info window
-      let contentString = `<h2>${place.venue.name}</h2><br />
-      <address>${place.venue.address}</address>`;
-
-      // Create info window for markers with the content
-      let infowindow = new window.google.maps.InfoWindow({
-        content: contentString
-      });
+      let contentString = `<h2>${place.venue.name}</h2>
+      <address>${place.venue.location.formattedAddress}</address>`;
 
       // Attach an event listener so the info window opens when clicked
       marker.addListener('click', () => {
+        // Change content in info window
+        infowindow.setContent(contentString);
+
+        // Open an info window
         infowindow.open(map, marker);
       });
     });
