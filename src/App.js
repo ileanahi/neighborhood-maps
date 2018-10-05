@@ -8,6 +8,7 @@ import axios from 'axios';
 
 class App extends Component {
   componentDidMount() {
+    this.getVenues();
     this.loadMap();
   }
 
@@ -45,12 +46,14 @@ class App extends Component {
   };
 
   getVenues = () => {
-    const endPoint = 'https://api.foursquare.com/v2/venues/explore';
+    const endPoint = 'https://api.foursquare.com/v2/venues/explore?';
     const parameters = {
+      // Client ID and Client Secret are required
       client_id: 'D2KNFN3USEB03QZX4XQOLHPS30PRMP3BT2ZPEC0NULIWMA4Z',
       client_secret: 'JX531KEPYP0KWZSLVBHXYP1CFBTXDVJGJWV5E2BOXJU4BWGP',
       query: 'food',
-      near: 'Kailua Kona'
+      near: 'Kailua-Kona',
+      v: '20182507'
     };
 
     axios
