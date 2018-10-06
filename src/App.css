@@ -1,5 +1,13 @@
+body,
+html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 #map {
-  height: 100vh;
+  position: relative;
+  height: 100%;
   width: 100%;
 }
 
@@ -32,6 +40,10 @@
 }
 
 @keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
