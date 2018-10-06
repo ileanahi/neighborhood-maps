@@ -101,7 +101,7 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <div className="container">
         <header>
           <h1>Neighborhood Map - Kailua-Kona, Hawaii</h1>
         </header>

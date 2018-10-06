@@ -5,8 +5,18 @@ html {
   padding: 0;
 }
 
+.container {
+  height: 100%;
+}
+
+header {
+  padding: 10px;
+  background-color: #000000;
+  color: #ffffff;
+}
+
 #map {
-  position: relative;
+  position: absolute;
   height: 100vh;
   width: 100%;
 }
