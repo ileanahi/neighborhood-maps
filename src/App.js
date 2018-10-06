@@ -39,7 +39,8 @@ class App extends Component {
           lat: place.venue.location.lat,
           lng: place.venue.location.lng
         },
-        map: map
+        map: map,
+        animation: window.google.maps.Animation.DROP
       });
 
       // Content of info window
@@ -48,6 +49,10 @@ class App extends Component {
 
       // Attach an event listener so the info window opens when clicked
       marker.addListener('click', () => {
+        // Makes marker bounce when clicked
+        marker.setAnimation(window.google.maps.Animation.BOUNCE);
+        window.setTimeout(() => marker.setAnimation(null), 2000);
+
         // Change content in info window
         infowindow.setContent(contentString);
 
