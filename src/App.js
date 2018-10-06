@@ -101,9 +101,14 @@ class App extends Component {
 
   render() {
     return (
-      <main>
-        <Map />
-      </main>
+      <div>
+        <header>
+          <h1>Neighborhood Map - Kailua-Kona, Hawaii</h1>
+        </header>
+        <main>
+          <Map />
+        </main>
+      </div>
     );
   }
 }
