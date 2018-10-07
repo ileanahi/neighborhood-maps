@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Map from './Map';
+import Panorama from './Panorama';
 
 import axios from 'axios';
 
@@ -79,7 +80,7 @@ class App extends Component {
       // Client ID and Client Secret are required
       client_id: 'D2KNFN3USEB03QZX4XQOLHPS30PRMP3BT2ZPEC0NULIWMA4Z',
       client_secret: 'JX531KEPYP0KWZSLVBHXYP1CFBTXDVJGJWV5E2BOXJU4BWGP',
-      query: 'food',
+      query: 'hawaiian',
       near: 'Kailua-Kona',
       v: '20182507'
     };
@@ -107,6 +108,7 @@ class App extends Component {
         </header>
         <main>
           <Map />
+          <Panorama place={this.state.venues} />
         </main>
       </div>
     );
