@@ -13,11 +13,12 @@ header {
   padding: 10px;
   background-color: #000000;
   color: #ffffff;
+  height: 80px;
 }
 
 #map {
   position: absolute;
-  height: 100%;
+  height: calc(100vh - 100px);
   width: 100%;
   overflow: hidden;
 }
@@ -26,5 +27,6 @@ header {
   position: absolute;
   z-index: 5;
   max-width: 100%;
-  width: 300px;
+  width: 350px;
+  height: calc(100vh - 100px);
 }
