@@ -45,8 +45,7 @@ class App extends Component {
       });
 
       // Content of info window
-      let contentString = `<h2>${place.venue.name}</h2>
-      <address>${place.venue.location.formattedAddress}</address>`;
+      let contentString = `<h2>${place.venue.name}</h2>`;
 
       // Attach an event listener so the info window opens when clicked
       marker.addListener('click', () => {
@@ -80,7 +79,7 @@ class App extends Component {
       // Client ID and Client Secret are required
       client_id: 'D2KNFN3USEB03QZX4XQOLHPS30PRMP3BT2ZPEC0NULIWMA4Z',
       client_secret: 'JX531KEPYP0KWZSLVBHXYP1CFBTXDVJGJWV5E2BOXJU4BWGP',
-      query: 'hawaiian',
+      query: 'food',
       near: 'Kailua-Kona',
       v: '20182507'
     };
