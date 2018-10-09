@@ -104,7 +104,9 @@ class App extends Component {
     return (
       <div className="container">
         <header>
-          <h1>Neighborhood Map - Kailua-Kona, Hawaii</h1>
+          <nav>
+            <h1>Neighborhood Map - Kailua-Kona, Hawaii</h1>
+          </nav>
         </header>
         <main>
           <Map />
