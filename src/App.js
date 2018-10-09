@@ -4,6 +4,7 @@ import Map from './Map';
 import Panorama from './Panorama';
 
 import axios from 'axios';
+import SideDrawer from './SideDrawer';
 
 // Borrowed code from Google Maps Tutorial https://developers.google.com/maps/documentation/javascript/adding-a-google-map
 
@@ -108,6 +109,7 @@ class App extends Component {
           </nav>
         </header>
         <main>
+          <SideDrawer />
           <Map />
           <Panorama place={this.state.venues} />
         </main>
