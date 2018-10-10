@@ -10,7 +10,8 @@ import SideDrawer from './SideDrawer';
 
 class App extends Component {
   state = {
-    venues: []
+    venues: [],
+    sidebar: 'Yes'
   };
 
   componentDidMount() {
@@ -100,7 +101,13 @@ class App extends Component {
       });
   };
 
-  isSidebarOn = () => {};
+  isSidebarOn = () => {
+    if (this.state.sidebar === 'Yes') {
+    }
+    this.setState(state => ({
+      sidebar: 'No'
+    }));
+  };
 
   render() {
     return (
