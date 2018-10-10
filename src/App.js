@@ -11,7 +11,7 @@ import SideDrawer from './SideDrawer';
 class App extends Component {
   state = {
     venues: [],
-    isSidebarOn: 'Yes'
+    isSidebarOn: true
   };
 
   componentDidMount() {
@@ -101,10 +101,12 @@ class App extends Component {
       });
   };
 
-  toggleSidebar = e => {
-    e.preventdefault();
-    let sideDrawer = document.getElementById('side-drawer');
-    if (this.state.isSidebarOn === 'Yes') {
+  toggleSidebar = () => {
+    this.setState(state => ({
+      isSidebarOn: !state.isSidebarOn
+    }));
+
+    /* if (this.state.isSidebarOn === 'Yes') {
       sideDrawer.classList.add('show-sidebar');
       this.setState(state => ({
         isSidebarOn: 'No'
@@ -114,7 +116,7 @@ class App extends Component {
       this.setState(state => ({
         isSidebarOn: 'Yes'
       }));
-    }
+    } */
   };
 
   render() {
@@ -126,10 +128,7 @@ class App extends Component {
           </nav>
         </header>
         <main>
-          <SideDrawer
-            isSidebarOn={this.state.isSidebarOn}
-            toggleSidebar={this.toggleSidebar}
-          />
+          <SideDrawer />
           <Map />
           <Panorama place={this.state.venues} />
         </main>
