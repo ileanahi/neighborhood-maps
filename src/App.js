@@ -100,6 +100,8 @@ class App extends Component {
       });
   };
 
+  isSidebarOn = () => {};
+
   render() {
     return (
       <div className="container">
