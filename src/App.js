@@ -126,7 +126,10 @@ class App extends Component {
           </nav>
         </header>
         <main>
-          <SideDrawer />
+          <SideDrawer
+            isSidebarOn={this.state.isSidebarOn}
+            toggleSidebar={this.toggleSidebar}
+          />
           <Map />
           <Panorama place={this.state.venues} />
         </main>
