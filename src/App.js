@@ -11,7 +11,7 @@ import SideDrawer from './SideDrawer';
 class App extends Component {
   state = {
     venues: [],
-    sidebar: 'Yes'
+    isSidebarOn: 'Yes'
   };
 
   componentDidMount() {
@@ -101,12 +101,20 @@ class App extends Component {
       });
   };
 
-  isSidebarOn = () => {
-    if (this.state.sidebar === 'Yes') {
+  toggleSidebar = e => {
+    e.preventdefault();
+    let sideDrawer = document.getElementById('side-drawer');
+    if (this.state.isSidebarOn === 'Yes') {
+      sideDrawer.classList.add('show-sidebar');
+      this.setState(state => ({
+        isSidebarOn: 'No'
+      }));
+    } else {
+      sideDrawer.classList.remove('show-sidebar');
+      this.setState(state => ({
+        isSidebarOn: 'Yes'
+      }));
     }
-    this.setState(state => ({
-      sidebar: 'No'
-    }));
   };
 
   render() {
