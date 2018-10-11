@@ -124,7 +124,9 @@ class App extends Component {
       <div className="container">
         <header>
           <nav>
-            <i id="hamburger" className="fas fa-bars fa-2x" />
+            <button id="hamburger">
+              <i className="fas fa-bars fa-2x" />
+            </button>
             <h2 id="header-text">Neighborhood Map - Kailua-Kona, Hawaii</h2>
           </nav>
         </header>
