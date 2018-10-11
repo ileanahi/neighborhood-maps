@@ -7,6 +7,8 @@ html {
 
 .container {
   height: 100%;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 header {
@@ -21,6 +23,12 @@ header {
   margin: auto;
   line-height: 80px;
   display: inline-block;
+}
+
+#hamburger {
+  display: inline-block;
+  margin-left: auto;
+  margin-right: 0;
 }
 
 #map {
