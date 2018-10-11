@@ -125,7 +125,7 @@ class App extends Component {
         <header>
           <nav>
             <h2 id="header-text">Neighborhood Map - Kailua-Kona, Hawaii</h2>
-            <i class="fas fa-bars" />
+            <i class="fas fa-bars fa-lg" />
           </nav>
         </header>
         <main>
