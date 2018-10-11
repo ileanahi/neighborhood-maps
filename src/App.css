@@ -29,6 +29,9 @@ header {
 #hamburger {
   display: inline-block;
   margin: 0 20px;
+  background: transparent;
+  border: none;
+  color: white;
 }
 
 #map {
