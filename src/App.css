@@ -17,6 +17,7 @@ header {
   color: #ffffff;
   height: 80px;
   vertical-align: middle;
+  flex: 100%;
 }
 
 #header-text {
