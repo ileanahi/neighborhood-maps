@@ -139,7 +139,7 @@ class App extends Component {
           </nav>
         </header>
         <main>
-          <SideDrawer />
+          <SideDrawer places={this.state.venues} />
           <Map />
           <Panorama place={this.state.venues} />
         </main>
