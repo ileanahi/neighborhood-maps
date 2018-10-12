@@ -135,7 +135,7 @@ class App extends Component {
             <button id="hamburger" onClick={this.toggleSidebar}>
               <i className="fas fa-bars fa-2x" />
             </button>
-            <h2 id="header-text">Neighborhood Map - Kailua-Kona, Hawaii</h2>
+            <h2 id="header-text">Neighborhood Map</h2>
           </nav>
         </header>
         <main>
