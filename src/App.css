@@ -59,9 +59,19 @@ header {
   padding: 12px;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 400px) {
   #header-text {
-    font-size: 0.95em;
+    font-size: 1em;
+  }
+
+  #hamburger {
+    margin: 0;
+  }
+}
+
+@media (min-width: 401px) and (max-width: 600px) {
+  #header-text {
+    font-size: 1.2em;
   }
 
   #hamburger {
