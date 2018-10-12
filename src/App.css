@@ -47,7 +47,7 @@ header {
   max-width: 100%;
   width: 325px;
   height: calc(100vh - 100px);
-  background-color: white;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .no-display {
