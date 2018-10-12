@@ -61,6 +61,10 @@ header {
 
 @media (max-width: 600px) {
   #header-text {
-    font-size: 1em;
+    font-size: 0.95em;
+  }
+
+  #hamburger {
+    margin: 0;
   }
 }
