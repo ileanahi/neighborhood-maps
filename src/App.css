@@ -61,7 +61,7 @@ header {
 
 @media (max-width: 400px) {
   #header-text {
-    font-size: 1em;
+    font-size: 1.5em;
   }
 
   #hamburger {
@@ -71,7 +71,7 @@ header {
 
 @media (min-width: 401px) and (max-width: 600px) {
   #header-text {
-    font-size: 1.2em;
+    font-size: 1.5em;
   }
 
   #hamburger {
