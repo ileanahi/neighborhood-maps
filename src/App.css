@@ -47,10 +47,15 @@ header {
   max-width: 100%;
   width: 325px;
   height: calc(100vh - 100px);
+  background-color: white;
 }
 
 .no-display {
   display: none;
+}
+
+.filter {
+  margin: 10px;
 }
 
 @media (max-width: 600px) {
