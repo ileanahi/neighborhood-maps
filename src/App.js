@@ -105,6 +105,12 @@ class App extends Component {
     this.setState(state => ({
       isSidebarOn: !state.isSidebarOn
     }));
+    let sideDrawer = document.getElementById('side-drawer');
+    if (this.state.isSidebarOn) {
+      sideDrawer.classList.add('no-display');
+    } else {
+      sideDrawer.classList.remove('no-display');
+    }
 
     /* if (this.state.isSidebarOn === 'Yes') {
       sideDrawer.classList.add('show-sidebar');
@@ -120,11 +126,13 @@ class App extends Component {
   };
 
   render() {
+    this.toggleSidebar = this.toggleSidebar.bind(this);
+
     return (
       <div className="container">
         <header>
           <nav>
-            <button id="hamburger">
+            <button id="hamburger" onClick={this.toggleSidebar}>
               <i className="fas fa-bars fa-2x" />
             </button>
             <h2 id="header-text">Neighborhood Map - Kailua-Kona, Hawaii</h2>

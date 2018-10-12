@@ -49,6 +49,10 @@ header {
   height: calc(100vh - 100px);
 }
 
+.no-display {
+  display: none;
+}
+
 @media (max-width: 600px) {
   #header-text {
     font-size: 1.2em;
