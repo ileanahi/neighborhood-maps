@@ -20,7 +20,11 @@ class App extends Component {
   }
 
   componentDidMount() {
-    this.getVenues();
+    let getVenues = this.getVenues();
+
+    Promise.all(getVenues).then(places => {
+      let markers = [];
+    });
   }
 
   // Initialize map with options
