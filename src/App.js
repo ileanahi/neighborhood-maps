@@ -13,7 +13,8 @@ class App extends Component {
     super(props);
     this.state = {
       venues: [],
-      isSidebarOn: true
+      isSidebarOn: true,
+      query: query
     };
 
     this.toggleSidebar = this.toggleSidebar.bind(this);
