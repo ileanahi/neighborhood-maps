@@ -14,14 +14,15 @@ class App extends Component {
     this.state = {
       venues: [],
       isSidebarOn: true,
-      query: query
+      query: '',
+      markers: []
     };
 
     this.toggleSidebar = this.toggleSidebar.bind(this);
   }
 
   componentDidMount() {
-    let getVenues = this.getVenues();
+    this.getVenues();
   }
 
   // Initialize map with options
@@ -39,9 +40,6 @@ class App extends Component {
     // Create info window for markers
     let infowindow = new window.google.maps.InfoWindow();
 
-    // Create markers container
-    let markers = [];
-
     this.state.venues.map(place => {
       console.log(place);
 
@@ -52,7 +50,8 @@ class App extends Component {
           lng: place.venue.location.lng
         },
         map: map,
-        animation: window.google.maps.Animation.DROP
+        animation: window.google.maps.Animation.DROP,
+        id: place.venue.id
       });
 
       // Content of info window
