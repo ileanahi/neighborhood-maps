@@ -9,10 +9,13 @@ import SideDrawer from './SideDrawer';
 // Borrowed code from Google Maps Tutorial https://developers.google.com/maps/documentation/javascript/adding-a-google-map
 
 class App extends Component {
-  state = {
-    venues: [],
-    isSidebarOn: true
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      venues: [],
+      isSidebarOn: true
+    };
+  }
 
   componentDidMount() {
     this.getVenues();
