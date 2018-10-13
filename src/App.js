@@ -15,6 +15,8 @@ class App extends Component {
       venues: [],
       isSidebarOn: true
     };
+
+    this.toggleSidebar = this.toggleSidebar.bind(this);
   }
 
   componentDidMount() {
@@ -129,8 +131,6 @@ class App extends Component {
   };
 
   render() {
-    this.toggleSidebar = this.toggleSidebar.bind(this);
-
     return (
       <div className="container">
         <header>
