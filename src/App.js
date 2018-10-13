@@ -116,18 +116,6 @@ class App extends Component {
     } else {
       sideDrawer.classList.remove('no-display');
     }
-
-    /* if (this.state.isSidebarOn === 'Yes') {
-      sideDrawer.classList.add('show-sidebar');
-      this.setState(state => ({
-        isSidebarOn: 'No'
-      }));
-    } else {
-      sideDrawer.classList.remove('show-sidebar');
-      this.setState(state => ({
-        isSidebarOn: 'Yes'
-      }));
-    } */
   };
 
   render() {
