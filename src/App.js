@@ -21,10 +21,6 @@ class App extends Component {
 
   componentDidMount() {
     let getVenues = this.getVenues();
-
-    Promise.all(getVenues).then(places => {
-      let markers = [];
-    });
   }
 
   // Initialize map with options
@@ -41,6 +37,9 @@ class App extends Component {
 
     // Create info window for markers
     let infowindow = new window.google.maps.InfoWindow();
+
+    // Create markers container
+    let markers = [];
 
     this.state.venues.map(place => {
       console.log(place);
@@ -70,6 +69,8 @@ class App extends Component {
         // Open an info window
         infowindow.open(map, marker);
       });
+
+      markers.push(marker);
     });
   };
 
