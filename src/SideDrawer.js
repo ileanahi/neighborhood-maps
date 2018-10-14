@@ -23,6 +23,7 @@ const SideDrawer = props => {
         </li>
         */
         }
+        <li>Hello World.</li>
       </ul>
     </section>
   );
