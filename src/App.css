@@ -71,8 +71,10 @@ li {
   list-style-type: none;
   font-size: 1rem;
   margin: 0.5rem;
-  border: 5px solid white;
-  background-color: #ffffff;
+  padding: 5px;
+  background-color: #000000;
+  border-radius: 2px;
+  color: #ffffff;
 }
 
 @media (max-width: 400px) {

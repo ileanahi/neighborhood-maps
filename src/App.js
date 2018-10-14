@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
 import Map from './Map';
-import Panorama from './Panorama';
 
 import axios from 'axios';
 import SideDrawer from './SideDrawer';
@@ -145,7 +144,6 @@ class App extends Component {
         <main>
           <SideDrawer places={this.state.venues} markers={this.state.markers} />
           <Map />
-          <Panorama place={this.state.venues} />
         </main>
       </div>
     );
