@@ -61,6 +61,11 @@ header {
   font-size: 1rem;
 }
 
+li {
+  list-style: none;
+  font-size: 1rem;
+}
+
 @media (max-width: 400px) {
   #header-text {
     font-size: 1.5em;
