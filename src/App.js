@@ -72,7 +72,10 @@ class App extends Component {
         infowindow.open(map, marker);
       });
 
-      // markers.push(marker);
+      this.state.markers.push(marker);
+      /* this.setState(prevState => {
+        markers: [...prevState.markers, marker];
+      }); */
     });
   };
 
@@ -130,6 +133,7 @@ class App extends Component {
   };
 
   render() {
+    console.log(this.state.markers);
     return (
       <div className="container">
         <header>
