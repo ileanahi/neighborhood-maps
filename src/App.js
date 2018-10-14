@@ -72,10 +72,8 @@ class App extends Component {
         infowindow.open(map, marker);
       });
 
+      // Push markers into marker state
       this.state.markers.push(marker);
-      /* this.setState(prevState => {
-        markers: [...prevState.markers, marker];
-      }); */
     });
   };
 
@@ -145,7 +143,7 @@ class App extends Component {
           </nav>
         </header>
         <main>
-          <SideDrawer places={this.state.venues} />
+          <SideDrawer places={this.state.venues} markers={this.state.markers} />
           <Map />
           <Panorama place={this.state.venues} />
         </main>
