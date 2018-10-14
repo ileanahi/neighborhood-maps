@@ -70,7 +70,7 @@ class App extends Component {
         infowindow.open(map, marker);
       });
 
-      markers.push(marker);
+      // markers.push(marker);
     });
   };
 
@@ -108,6 +108,10 @@ class App extends Component {
       })
       .catch(error => {
         console.log('ERROR: ' + error);
+        alert(
+          'Foursquare API failed to load. Please check your internet connection and refresh the page. ',
+          error
+        );
       });
   };
 
