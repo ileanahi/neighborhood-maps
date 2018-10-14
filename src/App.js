@@ -79,13 +79,13 @@ class App extends Component {
 
   // Load map and attach initMap to window
   loadMap = () => {
-    // So window can access initMap function
-    window.initMap = this.initMap;
-
     const apiKey = 'AIzaSyDGvqIUhorsoAEvjHiF4lGy_MNXIbS9C6A';
     let url = `https://maps.googleapis.com/maps/api/js?key=${apiKey}&callback=initMap`;
 
     scriptLoader(url);
+
+    // So window can access initMap function
+    window.initMap = this.initMap;
   };
 
   getVenues = () => {
@@ -154,8 +154,14 @@ class App extends Component {
 
 // Make a new script tag with src and insert it before existing script tags
 function scriptLoader(url) {
-  let index = window.document.getElementsByTagName('script')[0];
-  let script = window.document.createElement('script');
+  const index = window.document.getElementsByTagName('script')[0];
+  const script = window.document.createElement('script');
+
+  // Error if script throws an error
+  script.onerror = () => {
+    window.alert('Google Maps API failed to load.');
+  };
+
   script.src = url;
   script.async = true;
   script.defer = true;
