@@ -8,14 +8,21 @@ const SideDrawer = props => {
         aria-label="Filter Venues"
         placeholder="Filter Venues"
         className="filter"
+        type="search"
       />
       <ul id="places">
-        {/*props.places.venue
+        {console.log(props.places)
+        /* this.props.places.venue
         .map(place => (
           <li key={place.id} >
             <h2>${place.name}</h2>
           </li>
-        )) */}
+        ))
+        <li key={props.places.venue[0].id}>
+          <h2>${props.places.venue[0].name}</h2>
+        </li>
+        */
+        }
       </ul>
     </section>
   );
