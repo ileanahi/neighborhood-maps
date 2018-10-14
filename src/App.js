@@ -55,7 +55,9 @@ class App extends Component {
       });
 
       // Content of info window
-      let contentString = `<h2>${place.venue.name}</h2>`;
+      let contentString = `<h2>${place.venue.name}</h2><br />
+      <address>${place.venue.location.formattedAddress[0]}<br />
+      ${place.venue.location.formattedAddress[1]}</address>`;
 
       // Attach an event listener so the info window opens when clicked
       marker.addListener('click', () => {
