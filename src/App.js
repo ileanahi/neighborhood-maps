@@ -142,7 +142,7 @@ class App extends Component {
           </nav>
         </header>
         <main>
-          <SideDrawer places={this.state.venues} markers={this.state.markers} />
+          <SideDrawer {...this.state} />
           <Map />
         </main>
       </div>
