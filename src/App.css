@@ -49,6 +49,7 @@ header {
   width: 325px;
   height: calc(100vh - 100px);
   background-color: rgba(0, 0, 0, 0.5);
+  overflow: auto;
 }
 
 .no-display {
