@@ -28,6 +28,7 @@ class App extends Component {
   initMap = () => {
     let options = {
       zoom: 16,
+      //center: { lat: 28.5091, lng: 34.5136 }
       center: { lat: 19.64, lng: -155.9969 }
     };
 
@@ -39,7 +40,7 @@ class App extends Component {
     // Create info window for markers
     let infowindow = new window.google.maps.InfoWindow();
 
-    this.state.venues.map(place => {
+    this.state.venues.forEach(place => {
       // Make markers for each venue
       let marker = new window.google.maps.Marker({
         position: {
@@ -94,6 +95,7 @@ class App extends Component {
       client_id: 'D2KNFN3USEB03QZX4XQOLHPS30PRMP3BT2ZPEC0NULIWMA4Z',
       client_secret: 'JX531KEPYP0KWZSLVBHXYP1CFBTXDVJGJWV5E2BOXJU4BWGP',
       query: 'food',
+      //near: 'Dahab',
       near: 'Kailua-Kona',
       v: '20182507'
     };
@@ -109,6 +111,7 @@ class App extends Component {
         );
       })
       .catch(error => {
+        // Show error if Foursquare API doesn't load
         console.log('ERROR: ' + error);
         alert(
           'Foursquare API failed to load. Please check your internet connection and refresh the page. ',
@@ -117,10 +120,12 @@ class App extends Component {
       });
   };
 
+  // If sidebar state is on, toggle no-display class
   toggleSidebar = () => {
     this.setState(state => ({
       isSidebarOn: !state.isSidebarOn
     }));
+    // Grab side drawer element
     let sideDrawer = document.getElementById('side-drawer');
     if (this.state.isSidebarOn) {
       sideDrawer.classList.add('no-display');
@@ -130,12 +135,15 @@ class App extends Component {
   };
 
   listItemClick = place => {
-    console.log(place.venue.id);
+    // Find the marker that matches the venue's id
     const marker = this.state.markers.find(
       marker => marker.id === place.venue.id
     );
+    // Click on specified marker
     window.google.maps.event.trigger(marker, 'click');
   };
+
+  searchFilter = () => {};
 
   render() {
     console.log(this.state.markers);
