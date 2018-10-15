@@ -40,8 +40,6 @@ class App extends Component {
     let infowindow = new window.google.maps.InfoWindow();
 
     this.state.venues.map(place => {
-      console.log(place);
-
       // Make markers for each venue
       let marker = new window.google.maps.Marker({
         position: {
