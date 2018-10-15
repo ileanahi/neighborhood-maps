@@ -1,33 +1,32 @@
-import React from 'react';
+import React, { Component } from 'react';
 import VenueInfo from './VenueInfo';
 
-const SideDrawer = props => {
-  return (
-    <section id="side-drawer">
-      <input
-        aria-label="Filter Venues"
-        placeholder="Filter Venues"
-        className="filter"
-        type="search"
-      />
-      <ul id="places">
-        {console.log(props.places)
-        /* this.props.places.venue
-        .map(place => (
-          <li key={place.id} >
-            <h2>${place.name}</h2>
+class SideDrawer extends Component {
+  render() {
+    return (
+      <section id="side-drawer">
+        <input
+          aria-label="Filter Venues"
+          placeholder="Filter Venues"
+          className="filter"
+          type="search"
+        />
+        <ul id="places">
+          {this.props.venues && console.log(this.props.name)
+          /* (props.venues && props.venues
+        .map((venue, index) => (
+          <li key={index} >
+            <h2>${venue.venues.name}</h2>
           </li>
-        ))
-        <li key={props.places.venue[0].id}>
-          <h2>${props.places.venue[0].name}</h2>
-        </li>
-        */
-        }
-        <li>Hello World.</li>
-      </ul>
-    </section>
-  );
-};
+        ))) */
+          }
+          <li>Hello World.</li>
+          {<VenueInfo {...this.props} />}
+        </ul>
+      </section>
+    );
+  }
+}
 
 export default SideDrawer;
 

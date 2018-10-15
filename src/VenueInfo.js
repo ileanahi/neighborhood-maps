@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-const VenueInfo = props => {
-  return <div className="venue-info" />;
-};
+class VenueInfo extends Component {
+  render() {
+    this.props && console.log(this.props.venues);
+    return null;
+  }
+}
 
 export default VenueInfo;
