@@ -128,7 +128,11 @@ class App extends Component {
   };
 
   listItemClick = place => {
-    console.log(place);
+    console.log(place.venue.id);
+    const marker = this.state.markers.find(
+      marker => marker.id === place.venue.id
+    );
+    window.google.maps.event.trigger(marker, 'click');
   };
 
   render() {
