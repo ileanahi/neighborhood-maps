@@ -4,7 +4,7 @@ import VenueInfo from './VenueInfo';
 class SideDrawer extends Component {
   render() {
     return (
-      <section id="side-drawer">
+      <section id="side-drawer" aria-label="Venue List">
         <input
           aria-label="Filter Venues"
           placeholder="Filter Venues"
