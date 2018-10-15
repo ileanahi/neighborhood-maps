@@ -2,7 +2,12 @@ import React, { Component } from 'react';
 
 class VenueInfo extends Component {
   render() {
-    return <li>{this.props.venue.name}</li>;
+    // Returns Venue Name
+    return (
+      <li onClick={() => this.props.listItemClick(this.props)}>
+        {this.props.venue.name}
+      </li>
+    );
   }
 }
 

@@ -127,6 +127,10 @@ class App extends Component {
     }
   };
 
+  listItemClick = place => {
+    console.log(place);
+  };
+
   render() {
     console.log(this.state.markers);
     return (
@@ -140,7 +144,7 @@ class App extends Component {
           </nav>
         </header>
         <main>
-          <SideDrawer {...this.state} />
+          <SideDrawer {...this.state} listItemClick={this.listItemClick} />
           <Map />
         </main>
       </div>

@@ -12,11 +12,15 @@ class SideDrawer extends Component {
           type="search"
         />
         <ul id="places">
-          {this.props.venues &&
-            this.props.venues.map((venue, index) => (
-              <VenueInfo key={index} {...venue} />
+          {// Maps over venues and gives them a key and passes the venue information
+          this.props.venues &&
+            this.props.venues.map((place, index) => (
+              <VenueInfo
+                key={index}
+                {...place}
+                listItemClick={this.props.listItemClick}
+              />
             ))}
-          <li>Hello World.</li>
         </ul>
       </section>
     );
