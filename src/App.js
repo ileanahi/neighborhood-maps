@@ -31,7 +31,7 @@ class App extends Component {
       center: { lat: 19.64, lng: -155.9969 }
     };
 
-    const map = new window.google.maps.Map(
+    let map = new window.google.maps.Map(
       document.getElementById('map'),
       options
     );
@@ -61,6 +61,8 @@ class App extends Component {
         // Makes marker bounce when clicked
         marker.setAnimation(window.google.maps.Animation.BOUNCE);
         window.setTimeout(() => marker.setAnimation(null), 2000);
+
+        map.setCenter(marker.position);
 
         // Change content in info window
         infowindow.setContent(contentString);
