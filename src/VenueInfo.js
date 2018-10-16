@@ -5,6 +5,9 @@ class VenueInfo extends Component {
     // Returns Venue Name
     return (
       <li
+        aria-label={`${this.props.venue.name} ${
+          this.props.venue.location.formattedAddress
+        }`}
         tabIndex="0"
         onClick={() => this.props.listItemClick(this.props)}
         onKeyPress={() => this.props.listItemClick(this.props)}
