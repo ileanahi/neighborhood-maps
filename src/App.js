@@ -174,6 +174,11 @@ class App extends Component {
       this.setState({ markers });
     } else {
       this.setState({ filteredVenues: this.state.venues });
+      let reset = this.state.markers.map(marker => {
+        marker.setVisible(true);
+        return marker;
+      });
+      this.setState({ markers: reset });
     }
   };
 
