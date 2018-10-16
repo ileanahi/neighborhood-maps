@@ -18,6 +18,7 @@ class App extends Component {
     };
 
     this.toggleSidebar = this.toggleSidebar.bind(this);
+    this.searchFilter = this.searchFilter.bind(this);
   }
 
   componentDidMount() {
@@ -40,6 +41,7 @@ class App extends Component {
     // Create info window for markers
     let infowindow = new window.google.maps.InfoWindow();
 
+    // For Each because it doesn't return anything
     this.state.venues.forEach(place => {
       // Make markers for each venue
       let marker = new window.google.maps.Marker({
@@ -143,10 +145,27 @@ class App extends Component {
     window.google.maps.event.trigger(marker, 'click');
   };
 
-  searchFilter = () => {};
+  searchFilter = e => {
+    e.preventDefault();
+    this.setState({ query: e.target.value });
+    const markers = this.state.venues.map(venue => {
+      const watchedFor = venue.venue.name
+        .toLowerCase()
+        .includes(this.state.query);
+      const marker = this.state.markers.find(
+        marker => marker.id === venue.venue.id
+      );
+      if (watchedFor) {
+        marker.setVisible(true);
+      } else {
+        marker.setVisible(false);
+      }
+      return marker;
+    });
+    this.setState({ markers });
+  };
 
   render() {
-    console.log(this.state.markers);
     return (
       <div className="container">
         <header>
@@ -158,7 +177,11 @@ class App extends Component {
           </nav>
         </header>
         <main>
-          <SideDrawer {...this.state} listItemClick={this.listItemClick} />
+          <SideDrawer
+            {...this.state}
+            listItemClick={this.listItemClick}
+            searchFilter={this.searchFilter}
+          />
           <Map />
         </main>
       </div>
