@@ -38,6 +38,11 @@ class App extends Component {
       options
     );
 
+    if (map.error) {
+      console.log(map.error);
+      alert('Error:', map.error);
+    }
+
     // Create info window for markers
     let infowindow = new window.google.maps.InfoWindow();
 
@@ -107,6 +112,7 @@ class App extends Component {
       .then(response => {
         this.setState(
           {
+            // Set venues and filteredVenues
             venues: response.data.response.groups[0].items,
             filteredVenues: response.data.response.groups[0].items
           },
