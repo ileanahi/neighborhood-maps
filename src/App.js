@@ -25,6 +25,8 @@ class App extends Component {
     this.getVenues();
   }
 
+  // Map guidance from Elharony
+
   // Initialize map with options
   initMap = () => {
     let options = {
@@ -152,6 +154,8 @@ class App extends Component {
     window.google.maps.event.trigger(marker, 'click');
   };
 
+  // Filter guidance from Forrest Walker's tutorial
+
   searchFilter = query => {
     if (query) {
       // Find venues that include query
@@ -217,6 +221,7 @@ class App extends Component {
   }
 }
 
+// Guidance from Elharony's walkthrough
 // Make a new script tag with src and insert it before existing script tags
 function scriptLoader(url) {
   const index = window.document.getElementsByTagName('script')[0];
