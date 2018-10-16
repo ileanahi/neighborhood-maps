@@ -31,8 +31,8 @@ class App extends Component {
   initMap = () => {
     let options = {
       zoom: 15,
-      center: { lat: 28.5091, lng: 34.5136 }
-      //center: { lat: 19.64, lng: -155.9969 }
+      //center: { lat: 28.5091, lng: 34.5136 }
+      center: { lat: 19.64, lng: -155.9969 }
     };
 
     const map = new window.google.maps.Map(
@@ -49,22 +49,22 @@ class App extends Component {
     let infowindow = new window.google.maps.InfoWindow();
 
     // For Each because it doesn't return anything
-    this.state.venues.forEach(place => {
+    this.state.venues.forEach(venue => {
       // Make markers for each venue
       let marker = new window.google.maps.Marker({
         position: {
-          lat: place.venue.location.lat,
-          lng: place.venue.location.lng
+          lat: venue.venue.location.lat,
+          lng: venue.venue.location.lng
         },
         map: map,
         animation: window.google.maps.Animation.DROP,
-        id: place.venue.id
+        id: venue.venue.id
       });
 
       // Content of info window
-      let contentString = `<h2>${place.venue.name}</h2><br />
-      <address>${place.venue.location.formattedAddress[0]}<br />
-      ${place.venue.location.formattedAddress[1]}</address>`;
+      let contentString = `<h2>${venue.venue.name}</h2><br />
+      <address>${venue.venue.location.formattedAddress[0]}<br />
+      ${venue.venue.location.formattedAddress[1]}</address>`;
 
       // Attach an event listener so the info window opens when clicked
       marker.addListener('click', () => {
@@ -104,8 +104,8 @@ class App extends Component {
       client_id: 'D2KNFN3USEB03QZX4XQOLHPS30PRMP3BT2ZPEC0NULIWMA4Z',
       client_secret: 'JX531KEPYP0KWZSLVBHXYP1CFBTXDVJGJWV5E2BOXJU4BWGP',
       query: 'food',
-      near: 'Dahab',
-      //near: 'Kailua-Kona',
+      //near: 'Dahab',
+      near: 'Kailua-Kona',
       v: '20181610'
     };
 
