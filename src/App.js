@@ -104,7 +104,7 @@ class App extends Component {
       query: 'food',
       //near: 'Dahab',
       near: 'Kailua-Kona',
-      v: '20182507'
+      v: '20181610'
     };
 
     axios
@@ -154,12 +154,16 @@ class App extends Component {
 
   searchFilter = query => {
     if (query) {
+      // Find venues that include query
       const venues = this.state.venues.filter(venue =>
         venue.venue.name.toLowerCase().includes(query)
       );
+      // Set these venues as the filtered venues state
       this.setState({ filteredVenues: venues });
 
+      // Map through all venues to set marker visibility
       const markers = this.state.venues.map(venue => {
+        // Find venues that match the query
         const watchedFor = venue.venue.name.toLowerCase().includes(query);
         // Find markers whose ids match the names that include the query
         const marker = this.state.markers.find(
@@ -174,10 +178,13 @@ class App extends Component {
         }
         return marker;
       });
+      // Update markers
       this.setState({ markers });
     } else {
+      // Return filtered venues to all venues
       this.setState({ filteredVenues: this.state.venues });
-      let reset = this.state.markers.map(marker => {
+      // Make all markers visible
+      const reset = this.state.markers.map(marker => {
         marker.setVisible(true);
         return marker;
       });
