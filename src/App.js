@@ -14,7 +14,6 @@ class App extends Component {
       venues: [],
       filteredVenues: [],
       isSidebarOn: true,
-      query: '',
       markers: []
     };
 
@@ -179,12 +178,6 @@ class App extends Component {
         return marker;
       });
       this.setState({ markers: reset });
-    }
-  };
-
-  filterList = () => {
-    if (this.state.query) {
-    } else {
     }
   };
 
