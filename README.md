@@ -5,8 +5,8 @@ This is a project for the Udacity Front End Nanodegree course. This Single Page 
 ## Getting Started
 Download this repository and run
 ```
-npm install
-npm start
+npm install -g serve
+serve -s build
 ```
 The application loads and is ready to be used!
 
