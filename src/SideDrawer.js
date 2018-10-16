@@ -14,8 +14,8 @@ class SideDrawer extends Component {
         />
         <ul id="places">
           {// Maps over venues and gives them a key and passes the venue information
-          this.props.venues &&
-            this.props.venues.map((place, index) => (
+          this.props.filteredVenues &&
+            this.props.filteredVenues.map((place, index) => (
               <VenueInfo
                 key={index}
                 {...place}

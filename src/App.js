@@ -12,6 +12,7 @@ class App extends Component {
     super(props);
     this.state = {
       venues: [],
+      filteredVenues: [],
       isSidebarOn: true,
       query: '',
       markers: []
@@ -107,7 +108,8 @@ class App extends Component {
       .then(response => {
         this.setState(
           {
-            venues: response.data.response.groups[0].items
+            venues: response.data.response.groups[0].items,
+            filteredVenues: response.data.response.groups[0].items
           },
           this.loadMap()
         );
@@ -149,6 +151,7 @@ class App extends Component {
     e.preventDefault();
     // Set query to input value
     this.setState({ query: e.target.value });
+    this.filterList();
 
     const markers = this.state.venues.map(venue => {
       const watchedFor = venue.venue.name
@@ -170,6 +173,17 @@ class App extends Component {
     this.setState({ markers });
   };
 
+  filterList = () => {
+    if (this.state.query !== '') {
+      const venues = this.state.filteredVenues.filter(venue =>
+        venue.venue.name.toLowerCase().includes(this.state.query)
+      );
+      this.setState({ filteredVenues: venues });
+    } else {
+      this.setState({ filteredVenues: this.state.venues });
+    }
+  };
+
   render() {
     return (
       <div className="container">
@@ -186,6 +200,7 @@ class App extends Component {
             {...this.state}
             listItemClick={this.listItemClick}
             searchFilter={this.searchFilter}
+            filterList={this.filterList}
           />
           <Map />
         </main>
