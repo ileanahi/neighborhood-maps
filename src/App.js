@@ -33,7 +33,7 @@ class App extends Component {
       center: { lat: 19.64, lng: -155.9969 }
     };
 
-    let map = new window.google.maps.Map(
+    const map = new window.google.maps.Map(
       document.getElementById('map'),
       options
     );
@@ -147,18 +147,22 @@ class App extends Component {
 
   searchFilter = e => {
     e.preventDefault();
+    // Set query to input value
     this.setState({ query: e.target.value });
 
     const markers = this.state.venues.map(venue => {
       const watchedFor = venue.venue.name
         .toLowerCase()
         .includes(this.state.query);
+      // Find markers whose ids match the names that include the query
       const marker = this.state.markers.find(
         marker => marker.id === venue.venue.id
       );
       if (watchedFor) {
+        // Set marker to be visible if it includes query
         marker.setVisible(true);
       } else {
+        // Set marker to invisible if it doesn't include query
         marker.setVisible(false);
       }
       return marker;
