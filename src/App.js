@@ -147,8 +147,6 @@ class App extends Component {
   };
 
   searchFilter = query => {
-    // Set query to input value
-    this.setState({ query: query });
     if (query) {
       const venues = this.state.venues.filter(venue =>
         venue.venue.name.toLowerCase().includes(query)
