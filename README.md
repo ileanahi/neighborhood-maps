@@ -3,7 +3,12 @@
 This is a project for the Udacity Front End Nanodegree course. This Single Page Application (SPA) built in React shows the top 30 restaurants in Kailua-Kona.
 
 ## Getting Started
-Download this repository and run ```npm install``` then ```npm start```. The application loads and is ready to be used!
+Download this repository and run
+```
+npm install
+npm start
+```
+The application loads and is ready to be used!
 
 ## Built With
 * [React](https://reactjs.org/) - JavaScript Framework
