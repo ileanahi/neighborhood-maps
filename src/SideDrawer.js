@@ -10,7 +10,7 @@ class SideDrawer extends Component {
           placeholder="Filter Venues"
           className="filter"
           type="search"
-          onChange={this.props.searchFilter}
+          onChange={e => this.props.searchFilter(e.target.value)}
         />
         <ul id="places">
           {// Maps over venues and gives them a key and passes the venue information
