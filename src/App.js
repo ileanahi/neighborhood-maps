@@ -28,7 +28,7 @@ class App extends Component {
   // Initialize map with options
   initMap = () => {
     let options = {
-      zoom: 16,
+      zoom: 15,
       //center: { lat: 28.5091, lng: 34.5136 }
       center: { lat: 19.64, lng: -155.9969 }
     };
@@ -148,6 +148,7 @@ class App extends Component {
   searchFilter = e => {
     e.preventDefault();
     this.setState({ query: e.target.value });
+
     const markers = this.state.venues.map(venue => {
       const watchedFor = venue.venue.name
         .toLowerCase()
