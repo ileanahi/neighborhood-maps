@@ -29,8 +29,8 @@ class App extends Component {
   initMap = () => {
     let options = {
       zoom: 15,
-      //center: { lat: 28.5091, lng: 34.5136 }
-      center: { lat: 19.64, lng: -155.9969 }
+      center: { lat: 28.5091, lng: 34.5136 }
+      //center: { lat: 19.64, lng: -155.9969 }
     };
 
     const map = new window.google.maps.Map(
@@ -102,8 +102,8 @@ class App extends Component {
       client_id: 'D2KNFN3USEB03QZX4XQOLHPS30PRMP3BT2ZPEC0NULIWMA4Z',
       client_secret: 'JX531KEPYP0KWZSLVBHXYP1CFBTXDVJGJWV5E2BOXJU4BWGP',
       query: 'food',
-      //near: 'Dahab',
-      near: 'Kailua-Kona',
+      near: 'Dahab',
+      //near: 'Kailua-Kona',
       v: '20181610'
     };
 
