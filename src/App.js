@@ -151,6 +151,11 @@ class App extends Component {
     // Set query to input value
     this.setState({ query: query });
     if (query) {
+      const venues = this.state.filteredVenues.filter(venue =>
+        venue.venue.name.toLowerCase().includes(query)
+      );
+      this.setState({ filteredVenues: venues });
+
       const markers = this.state.venues.map(venue => {
         const watchedFor = venue.venue.name.toLowerCase().includes(query);
         // Find markers whose ids match the names that include the query
@@ -167,17 +172,14 @@ class App extends Component {
         return marker;
       });
       this.setState({ markers });
+    } else {
+      this.setState({ filteredVenues: this.state.venues });
     }
   };
 
   filterList = () => {
     if (this.state.query) {
-      const venues = this.state.filteredVenues.filter(venue =>
-        venue.venue.name.toLowerCase().includes(this.state.query)
-      );
-      this.setState({ filteredVenues: venues });
     } else {
-      this.setState({ filteredVenues: this.state.venues });
     }
   };
 
